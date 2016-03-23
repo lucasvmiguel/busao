@@ -18,7 +18,7 @@ defmodule ReceiverServer.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :core],
+    [applications: [:logger, :core, :cowboy],
      mod: {ReceiverServer, []}]
   end
 
@@ -36,6 +36,9 @@ defmodule ReceiverServer.Mixfile do
   #
   # Type "mix help deps" for more examples and options
   defp deps do
-    [{:core, in_umbrella: true}]
+    [
+      {:core, in_umbrella: true},
+      {:cowboy, "~> 1.0.0"}
+    ]
   end
 end
